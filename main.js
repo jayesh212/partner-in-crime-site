@@ -147,7 +147,7 @@ const shareBtn = $('[data-share]');
 const shareStatus = $('[data-share-status]');
 shareBtn.addEventListener('click', async () => {
   const url = location.origin + location.pathname;
-  const data = { title: 'Partner in Crime', text: 'Want to be my partner in crime? Goals, for two.', url };
+  const data = { title: 'Partner in Crimes', text: 'Want to be my partner in crime? Goals, for two.', url };
   try {
     if (navigator.share) { await navigator.share(data); shareStatus.textContent = 'Sent.'; return; }
     await navigator.clipboard.writeText(url);
