@@ -14,7 +14,7 @@ SHELL = '''<!doctype html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;600&display=swap">
-<link rel="stylesheet" href="styles.css?v=6681944a">
+<link rel="stylesheet" href="styles.css?v=662350d4">
 <script>try{{var t=localStorage.getItem('pic-theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}}catch(e){{}}</script>
 </head>
 <body class="docpage">
@@ -52,7 +52,7 @@ SHELL = '''<!doctype html>
     <nav aria-label="Footer"><a href="./">Home</a><a href="privacy.html">Privacy</a><a href="support.html">Support</a></nav>
   </div>
 </footer>
-<script src="theme.js?v=6681944a" defer></script>
+<script src="theme.js?v=662350d4" defer></script>
 </body>
 </html>
 '''

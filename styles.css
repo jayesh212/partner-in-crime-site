@@ -309,7 +309,6 @@ details p{color:var(--grey);padding:0 0 22px;max-width:56ch}
   .hero__lede{font-size:16px;margin-bottom:var(--s4)}
   .hero__actions{flex-wrap:nowrap;gap:var(--s4)}
   .hero__actions .btn{min-height:48px;padding:0 14px;font-size:12px;gap:10px}
-  .hero .meta{display:none}
   .hero__art{min-height:0;padding:var(--s4) 0 var(--s3)}
   .hero__blob{width:62vw;height:62vw}
   .hero__art{--pw:min(44vw,210px)}
