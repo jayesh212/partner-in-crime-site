@@ -72,7 +72,10 @@
       <svg class="hero__blob hero__blob--a" aria-hidden="true"><use href="#blob1"/></svg>
       <svg class="hero__blob hero__blob--b" aria-hidden="true"><use href="#blob2"/></svg>
       <figure class="phone phone--back">
-        <img src="img/water.webp" alt="" width="722" height="1522" loading="eager">
+        <picture>
+          <source srcset="img/water-dark.webp" media="(prefers-color-scheme: dark)" data-dark-src>
+          <img src="img/water.webp" alt="" width="722" height="1522">
+        </picture>
       </figure>
       <figure class="phone phone--hero">
         <span class="tape" aria-hidden="true"></span>

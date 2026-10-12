@@ -27,14 +27,15 @@ if (APP_STORE_URL) {
 const root = document.documentElement;
 const themeBtn = $('[data-theme-btn]');
 const themeTxt = $('[data-theme-txt]');
-const darkSrc = $('[data-dark-src]');
+const darkSrcs = $$('[data-dark-src]');
 const MODES = ['auto', 'light', 'dark'];
 const applyTheme = mode => {
   if (mode === 'auto') delete root.dataset.theme; else root.dataset.theme = mode;
   const label = mode[0].toUpperCase() + mode.slice(1);
   themeTxt.textContent = label;
   themeBtn.setAttribute('aria-label', `Colour theme: ${label}. Change`);
-  darkSrc.media = mode === 'auto' ? '(prefers-color-scheme: dark)' : mode === 'dark' ? 'all' : 'not all';
+  const media = mode === 'auto' ? '(prefers-color-scheme: dark)' : mode === 'dark' ? 'all' : 'not all';
+  darkSrcs.forEach(s => { s.media = media; });
 };
 let mode = root.dataset.theme || 'auto';
 applyTheme(mode);
