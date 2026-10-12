@@ -116,7 +116,7 @@ ol,ul{padding:0;list-style:none}
 
 /* phones */
 .phone{position:relative;border-radius:15% / 7.1%;background:#0E0D12;padding:3.2%;box-shadow:0 0 0 1.5px #3A3842}
-.phone img{width:100%;aspect-ratio:722/1522;border-radius:13.4% / 6.36%}
+.phone img{width:100%;aspect-ratio:660/1434;border-radius:13.4% / 6.36%}
 .phone--hero{width:var(--pw);rotate:-3deg;z-index:2;margin-right:22%;box-shadow:0 0 0 1.5px #3A3842,14px 14px 0 color-mix(in srgb,var(--blue) 85%,transparent)}
 
 /* ticker */
