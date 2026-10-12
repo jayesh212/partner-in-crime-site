@@ -29,6 +29,7 @@
 </script>
 </head>
 <body>
+<div class="progress" aria-hidden="true"><i></i></div>
 <!--SPRITES-->
 <a class="skip" href="#main">Skip to content</a>
 
@@ -70,13 +71,22 @@
     <div class="hero__art">
       <svg class="hero__blob hero__blob--a" aria-hidden="true"><use href="#blob1"/></svg>
       <svg class="hero__blob hero__blob--b" aria-hidden="true"><use href="#blob2"/></svg>
+      <figure class="phone phone--back">
+        <img src="img/water.webp" alt="" width="722" height="1522" loading="eager">
+      </figure>
       <figure class="phone phone--hero">
         <span class="tape" aria-hidden="true"></span>
         <picture>
           <source srcset="img/home-dark.webp" media="(prefers-color-scheme: dark)" data-dark-src>
-          <img src="img/home.webp" alt="Home screen: Jay's and Ria's tasks overlap in the middle, with a shared water bottle and today's list" width="722" height="1522" fetchpriority="high">
+          <img src="img/home.webp" alt="Home screen: Jay's and Ria's tasks overlap in the middle, with shared water, today's list, a trip countdown, Biscuit the dog and tonight's wind-down" width="722" height="1522" fetchpriority="high">
         </picture>
       </figure>
+      <div class="hnote" aria-hidden="true">
+        <svg class="hnote__blob"><use href="#blob2"/></svg>
+        <div><span class="hnote__lab">Nudge from Ria · 14:06</span><b>Sip something, you raisin.</b></div>
+      </div>
+      <svg class="hero__plant" viewBox="0 0 120 120" aria-hidden="true"><use href="#pl-monstera"/></svg>
+      <svg class="hero__pet" viewBox="0 0 120 120" aria-hidden="true"><use href="#pet-dog"/></svg>
       <span class="stamp stamp--hero" aria-hidden="true">Two<b>×</b>One</span>
     </div>
   </div>
@@ -191,7 +201,7 @@
       <li><svg viewBox="0 0 120 120" role="img" aria-label="Goldie, a goldfish"><use href="#pet-fish"/></svg><b>Goldie</b><span>Goldfish</span></li>
     </ul>
     <div class="world__row">
-      <figure class="phone phone--world"><img src="img/pet.webp" alt="Biscuit's page: a portrait, a mood stamp, four needs bars and care buttons" width="722" height="1522" loading="lazy"></figure>
+      <figure class="phone phone--world" data-par="0.07"><img src="img/pet.webp" alt="Biscuit's page: a portrait, a mood stamp, four needs bars and care buttons" width="722" height="1522" loading="lazy"></figure>
       <div class="plants">
         <p class="lab">Plus ten plants</p>
         <div class="plants__row">
@@ -201,7 +211,7 @@
         </div>
         <p class="body">Each one grows through three sizes. A long streak shows up as a fuller plant.</p>
       </div>
-      <figure class="phone phone--world phone--tilt"><img src="img/greenhouse.webp" alt="The greenhouse: plants on printed shelves, locked ones shown as outlines" width="722" height="1522" loading="lazy"></figure>
+      <figure class="phone phone--world phone--tilt" data-par="-0.07"><img src="img/greenhouse.webp" alt="The greenhouse: plants on printed shelves, locked ones shown as outlines" width="722" height="1522" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -230,8 +240,8 @@
       </div>
     </div>
     <div class="night__art">
-      <figure class="phone phone--night-a"><img src="img/night-write.webp" alt="Writing screen: a shared timer at 07:48 and both word counts" width="722" height="1522" loading="lazy"></figure>
-      <figure class="phone phone--night-b"><img src="img/night-after.webp" alt="After writing: lights out, word counts, and words you both used" width="722" height="1522" loading="lazy"></figure>
+      <figure class="phone phone--night-a" data-par="0.09"><img src="img/night-write.webp" alt="Writing screen: a shared timer at 07:48 and both word counts" width="722" height="1522" loading="lazy"></figure>
+      <figure class="phone phone--night-b" data-par="-0.07"><img src="img/night-after.webp" alt="After writing: lights out, word counts, and words you both used" width="722" height="1522" loading="lazy"></figure>
     </div>
   </div>
 </section>
@@ -247,7 +257,7 @@
       <div><dt>Missed a day</dt><dd>Leaves blank paper, not a broken number.</dd></div>
       <div><dt>Private tasks</dt><dd>Print in grey with a lock. Your partner doesn't see them.</dd></div>
       <div><dt>Your journal</dt><dd>Only you can read it. They see stats and mood.</dd></div>
-      <div><dt>Sign in</dt><dd>With Apple. No new password.</dd></div>
+      <div><dt>Pets</dt><dd>Wander off if forgotten. Call them home three days running.</dd></div>
     </dl>
   </div>
 </section>
@@ -281,7 +291,7 @@
       </div>
       <p class="get__status" role="status" data-share-status></p>
     </div>
-    <figure class="phone phone--get"><span class="tape" aria-hidden="true"></span><img src="img/streak.webp" alt="Streak card: a poster with the shared day count in the overlap of two inks" width="722" height="1522" loading="lazy"></figure>
+    <figure class="phone phone--get" data-par="-0.08"><span class="tape" aria-hidden="true"></span><img src="img/streak.webp" alt="Streak card: a poster with the shared day count in the overlap of two inks" width="722" height="1522" loading="lazy"></figure>
   </div>
 </section>
 

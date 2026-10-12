@@ -80,6 +80,28 @@ if (!reduced) {
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
 }
 
+/* Scroll effects: progress bar, speed-based misregistration, drift */
+const progress = $('.progress');
+const pars = $$('[data-par]');
+let lastY = scrollY, vel = 0, raf = 0;
+const frame = () => {
+  raf = 0;
+  const max = document.documentElement.scrollHeight - innerHeight;
+  progress.style.setProperty('--sp', max > 0 ? (scrollY / max).toFixed(4) : 0);
+  if (reduced) return;
+  const dy = scrollY - lastY; lastY = scrollY;
+  vel += (Math.max(-1, Math.min(1, dy / 60)) - vel) * .25;
+  root.style.setProperty('--v', Math.abs(vel).toFixed(3));
+  pars.forEach(el => {
+    const r = el.parentElement.getBoundingClientRect();
+    if (r.bottom < 0 || r.top > innerHeight) return;
+    el.style.setProperty('--par', `${((r.top + r.height / 2 - innerHeight / 2) * +el.dataset.par).toFixed(1)}px`);
+  });
+  if (Math.abs(vel) > .002) raf = requestAnimationFrame(frame); else root.style.setProperty('--v', 0);
+};
+addEventListener('scroll', () => { if (!raf) raf = requestAnimationFrame(frame); }, { passive: true });
+frame();
+
 /* Bars grow in */
 if (!reduced) {
   const duals = $$('.bars');
