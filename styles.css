@@ -35,6 +35,7 @@ ol,ul{padding:0;list-style:none}
 .skip:focus{top:12px}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
 .nowrap{white-space:nowrap}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
 /* print kit */
 .mis{text-shadow:.035em .02em 0 color-mix(in srgb,var(--pink) 80%,transparent),-.035em -.02em 0 color-mix(in srgb,var(--blue) 75%,transparent)}
@@ -119,10 +120,13 @@ ol,ul{padding:0;list-style:none}
 .stat{display:flex;flex-direction:column;gap:var(--s3);padding-top:var(--s3);border-top:2.5px solid var(--ink)}
 .stat__big{font:400 clamp(84px,9vw,136px)/.85 var(--serif);letter-spacing:-.03em}
 .stat__text{font-size:18px;line-height:1.45;max-width:30ch}
-.stat__text b{font-family:var(--serif);font-weight:400;font-size:1.25em;color:var(--grey)}
-.dual{position:relative;height:30px;border:2px solid var(--ink);background:var(--paper2)}
-.dual i{position:absolute;top:0;bottom:0;left:0;width:calc(var(--v) * 100%);mix-blend-mode:var(--blend);transform-origin:left;transform:scaleX(var(--p,1));transition:transform 1.2s var(--ease)}
-.dual__a{background:var(--pink)} .dual__b{background:var(--blue)}
+.bars{display:grid;gap:12px}
+.bar{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:baseline}
+.bar span{font:500 12px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.bar b{font:400 22px/1 var(--serif)}
+.bar::after{content:"";grid-column:1/-1;grid-row:2;height:14px;border:2px solid var(--ink);background:var(--paper2)}
+.bar__fill{grid-column:1/-1;grid-row:2;height:14px;width:calc(var(--v) * 100%);border:2px solid var(--ink);z-index:1;transform-origin:left;transform:scaleX(var(--p,1));transition:transform 1.2s var(--ease)}
+.bar__fill--a{background:var(--pink)} .bar__fill--b{background:var(--blue)}
 .cite{font:400 12.5px/1.5 var(--mono);color:var(--grey)}
 .cite a{color:var(--ink);text-underline-offset:3px}
 .stat--note{position:relative;border:2.5px solid var(--ink);background:var(--yel);color:#1B1B1F;padding:var(--s4);rotate:-1.5deg;align-self:start;margin-top:var(--s3)}
@@ -145,7 +149,7 @@ ol,ul{padding:0;list-style:none}
 .mixer{display:flex;flex-direction:column;gap:var(--s4)}
 .mixer__stage{position:relative;height:clamp(240px,30vw,360px)}
 .mixer__blob{position:absolute;top:50%;width:min(46%,300px);aspect-ratio:1;translate:0 -50%;mix-blend-mode:var(--blend);transition:left .5s var(--ease),right .5s var(--ease)}
-.mixer__blob--a{color:var(--a);left:var(--la,10%)} .mixer__blob--b{color:var(--b);right:var(--la,10%)}
+.mixer__blob--a{color:var(--a);left:var(--la,10%);top:44%} .mixer__blob--b{color:var(--b);right:var(--la,10%);top:58%}
 .mixer__labels{display:flex;justify-content:space-between;font:500 12px var(--mono);letter-spacing:.1em;text-transform:uppercase}
 .mixer__labels span{display:inline-flex;align-items:center;gap:6px}
 .mixer__labels span::before{content:"";width:10px;height:10px;border-radius:50%}
@@ -194,9 +198,9 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 :root[data-theme="dark"] .night{background:#0D3A66}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .night{background:#0D3A66}}
 .night__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s6);align-items:center}
-.lab--night{color:#EEECE6;opacity:.85}
+.lab--night{color:#EEECE6;font-weight:600}
 .facts{margin:var(--s5) 0;display:grid;gap:var(--s3);max-width:40ch}
-.facts li{font-size:clamp(18px,1.5vw,20px);padding-left:30px;position:relative}
+.facts li{font-size:clamp(18px,1.5vw,20px);font-weight:600;padding-left:30px;position:relative}
 .facts li::before{content:"";position:absolute;left:0;top:.55em;width:16px;height:9px;background:var(--pink);mix-blend-mode:normal}
 .sync{display:flex;align-items:center;gap:var(--s4);border:2.5px solid #EEECE6;padding:var(--s4);max-width:440px}
 .sync__blobs{position:relative;width:84px;height:84px;flex:none}
@@ -207,7 +211,7 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .sync__p--a{stroke:var(--pink)} .sync__p--b{stroke:var(--yel)}
 .sync__ui{display:grid;gap:8px;justify-items:start}
 .sync__time{font:400 44px/1 var(--serif);font-variant-numeric:tabular-nums}
-.sync__status{font:400 13px var(--mono);min-height:1.4em}
+.sync__status{font:600 14px var(--mono);min-height:1.4em}
 .night__art{position:relative;height:clamp(520px,52vw,660px)}
 .night__art .phone{position:absolute;width:min(46%,290px)}
 .phone--night-a{left:4%;top:0;rotate:-4deg;box-shadow:0 0 0 1.5px #3A3842,12px 12px 0 var(--pink)}
@@ -238,9 +242,9 @@ details p{color:var(--grey);padding:0 0 22px;max-width:56ch}
 .get::before{content:"";position:absolute;z-index:-1;width:min(90vw,900px);aspect-ratio:1;border-radius:50%;background:var(--pink);mix-blend-mode:multiply;left:-22%;top:-30%}
 .get__grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:var(--s5);align-items:center}
 .get__title{font:400 clamp(56px,8.4vw,128px)/.9 var(--serif);letter-spacing:-.03em}
-.get__lede{font-size:clamp(18px,1.5vw,21px);max-width:34ch;margin:var(--s4) 0 var(--s5)}
+.get__lede{font-weight:600;font-size:clamp(18px,1.5vw,21px);max-width:34ch;margin:var(--s4) 0 var(--s5)}
 .get__actions{display:flex;flex-wrap:wrap;gap:var(--s4)}
-.get__status{margin-top:var(--s3);min-height:1.5em;font:400 14px var(--mono)}
+.get__status{margin-top:var(--s3);min-height:1.5em;font:600 14px var(--mono)}
 .phone--get{width:min(100%,290px);justify-self:center;rotate:4deg;box-shadow:0 0 0 1.5px #3A3842,12px 12px 0 var(--yel)}
 
 /* footer */
@@ -337,3 +341,61 @@ details p{color:var(--grey);padding:0 0 22px;max-width:56ch}
 .plants__row{background:#FAF9F5;border:2px solid var(--ink);padding:10px 14px}
 :root[data-theme="dark"] .get{background:#0D3A66}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .get{background:#0D3A66}}
+
+/* ---------- motion ---------- */
+@media (prefers-reduced-motion:no-preference){
+  /* headings print slightly off-register, then settle */
+  .js .h2.mis,.js .get__title{text-shadow:none}
+  .js .h2.mis.is-in,.js .get__title.is-in{animation:settle 1.1s var(--ease) both}
+  @keyframes settle{
+    from{text-shadow:.16em .09em 0 color-mix(in srgb,var(--pink) 80%,transparent),-.16em -.09em 0 color-mix(in srgb,var(--blue) 75%,transparent)}
+    to{text-shadow:.035em .02em 0 color-mix(in srgb,var(--pink) 80%,transparent),-.035em -.02em 0 color-mix(in srgb,var(--blue) 75%,transparent)}}
+  .js .night .h2.mis.is-in,.js .get__title.is-in{animation-name:settle-night}
+  @keyframes settle-night{from{text-shadow:.16em .1em 0 color-mix(in srgb,var(--pink) 90%,transparent)}to{text-shadow:.04em .03em 0 color-mix(in srgb,var(--pink) 90%,transparent)}}
+
+  /* hero: the title settles on load, the phone floats, blobs drift on scroll */
+  .hero__title{animation:settle 1.4s .15s var(--ease) both}
+  .phone--hero{animation:float 6s ease-in-out infinite}
+  .hero__blob--a{transform:translateY(calc(var(--py,0) * -.18px))}
+  .hero__blob--b{transform:translateY(calc(var(--py,0) * .12px))}
+  .hero__art .phone--hero{transform:translateY(calc(var(--py,0) * -.08px))}
+  @keyframes float{50%{translate:0 -12px}}
+  .stamp{animation:spin 40s linear infinite}
+  @keyframes spin{to{rotate:372deg}}
+
+  /* pets bob, each on its own beat; lift when you point at one */
+  .pets svg{animation:bob-sm 3.6s ease-in-out infinite}
+  .pets li:nth-child(2) svg{animation-delay:-.7s}.pets li:nth-child(3) svg{animation-delay:-1.4s}
+  .pets li:nth-child(4) svg{animation-delay:-2.1s}.pets li:nth-child(5) svg{animation-delay:-2.8s}
+  @keyframes bob-sm{50%{translate:0 -5px}}
+  .pets li{transition:rotate .35s var(--ease),translate .35s var(--ease),box-shadow .35s var(--ease)}
+  .pets li:hover{rotate:0deg;translate:0 -6px;box-shadow:6px 6px 0 var(--pink)}
+  .plants__row svg{transform-origin:50% 90%;animation:sway 5s ease-in-out infinite}
+  .plants__row svg:nth-child(2){animation-delay:-1.6s}.plants__row svg:nth-child(3){animation-delay:-3.2s}
+  @keyframes sway{50%{rotate:-2.5deg}}
+
+  /* rail: phones straighten and lift */
+  .shot .phone{transition:rotate .4s var(--ease),translate .4s var(--ease)}
+  .shot:hover .phone,.shot:focus-within .phone{rotate:0deg;translate:0 -8px}
+
+  /* sticky note swings a little */
+  .stat--note{transition:rotate .5s var(--ease)}
+  .stat--note:hover{rotate:.5deg}
+
+  /* mixer blobs breathe */
+  .mixer__blob svg,.mixer__blob{animation:breathe 4.5s ease-in-out infinite}
+  .mixer__blob--b{animation-delay:-2.2s}
+  @keyframes breathe{50%{scale:1.035}}
+
+  /* night phones float out of step */
+  .phone--night-a{animation:float 7s ease-in-out infinite}
+  .phone--night-b{animation:float 7s ease-in-out infinite -3.5s}
+  .phone--get{animation:float 6.5s ease-in-out infinite -2s}
+
+  /* reveal with a small print-feed tilt */
+  .js .rv{transform:translateY(22px) rotate(.6deg)}
+  .js .rv.is-in{transform:none}
+  .js .pets li.rv{transition:opacity .6s var(--ease),transform .6s var(--ease),rotate .35s var(--ease),translate .35s var(--ease),box-shadow .35s var(--ease)}
+  .js .pets li:nth-child(2).rv{transition-delay:.06s}.js .pets li:nth-child(3).rv{transition-delay:.12s}
+  .js .pets li:nth-child(4).rv{transition-delay:.18s}.js .pets li:nth-child(5).rv{transition-delay:.24s}
+}

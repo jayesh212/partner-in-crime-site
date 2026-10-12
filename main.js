@@ -65,16 +65,24 @@ const track = $('[data-ticker]');
 track.innerHTML += track.innerHTML;
 
 /* Reveal */
-const rvTargets = $$('.head, .stat, .pets li, .shot, .form, .faq__list, .mixer');
+const rvTargets = $$('.head, .stat, .pets li, .shot, .form, .faq__list, .mixer, .h2, .get__title');
 rvTargets.forEach(el => el.classList.add('rv'));
 const io = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
 }), { rootMargin: '0px 0px -8% 0px' });
 rvTargets.forEach(el => io.observe(el));
 
-/* Overprint bars grow in */
+/* Hero parallax: blobs and phone drift at different speeds */
 if (!reduced) {
-  const duals = $$('.dual');
+  const hero = $('.hero');
+  let ticking = false;
+  const upd = () => { ticking = false; const y = Math.min(scrollY, innerHeight); hero.style.setProperty('--py', y.toFixed(1)); };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+}
+
+/* Bars grow in */
+if (!reduced) {
+  const duals = $$('.bars');
   duals.forEach(d => $$('i', d).forEach(i => i.style.setProperty('--p', 0)));
   const bo = new IntersectionObserver(es => es.forEach(e => {
     if (!e.isIntersecting) return;
