@@ -58,7 +58,7 @@ SHELL = '''<!doctype html>
 '''
 
 # Set to the support address once Jay confirms it; empty keeps a placeholder.
-SUPPORT_EMAIL = ''
+SUPPORT_EMAIL = 'jsharma7869@gmail.com'
 MAILTO = 'mailto:' + SUPPORT_EMAIL + '?subject=Partner%20in%20Crimes%20support'
 EMAIL_TXT = SUPPORT_EMAIL or 'our support address (being set up)'
 
