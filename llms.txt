@@ -1,0 +1,38 @@
+# Partner in Crimes
+
+> An iPhone app for couples to get things done together. Shared and private to-dos, a water tracker for two, four-week couple challenges, a thank-you wall, a shared streak, games, a little home with pets and plants, and a 15-minute journal you write side by side. Made for couples; works for best friends, roommates and accountability buddies too.
+
+- Platform: iPhone, iOS 17 or later. Each person uses their own iPhone.
+- Status: coming soon to the App Store.
+- Made by: Jay Sharma.
+- Website: https://jayesh212.github.io/partner-in-crime-site/
+
+## What it does
+
+- Do it together: your day and your partner's sit side by side. When a shared task is done by both of you, it lands in the middle as "done together". Private tasks stay private.
+- Challenges: 12 four-week challenges (for example Fit Heist, Page Turner, Hydration Therapy, Date Night Heist, Love Notes, Kitchen Crew). Two misses are allowed. Finishing one unlocks a pet you can only get from that challenge.
+- A little home: grow a flat together. Unlock 6 rooms, earn 40 things to put in them, and look after the pets and plants that live there.
+- Thank-you wall: pin a note for the small stuff. Tap a note to send a heart back.
+- Shared streak: each of you does one thing a day and the fire grows. Freezes cover off days; a missed day never scolds you.
+- Wind-down journal: start a 15-minute journal at the same moment. Your words stay yours; your partner sees only word counts and mood. Past entries are visible only to the person who wrote them.
+- Moments and The Hideout: a photo of your day fills a monthly calendar; a private board for notes, photos and nudges.
+- Games: Daily word, Who's more likely, Draw & guess, Tic Tac Two, Four in a row, Memory pairs and Know Us question cards. Playable against the house until your partner joins.
+- Water for two: one shared bottle fills as you both drink; nudge your partner when they're behind.
+- Home and Lock Screen: widgets for today, water, your pet, challenges and countdowns. Log water from Control Center, Siri or Back Tap. Live Activities for the wind-down timer and countdowns.
+- Plans and countdowns: trips, birthdays and date nights.
+- Offline first: every tap saves on the phone and syncs in the background.
+- Pairing: a six-character code or a QR scan.
+
+## Privacy in short
+
+No ads, no cross-app tracking, no third-party analytics. Journal text is readable only by its writer. Full policy: https://jayesh212.github.io/partner-in-crime-site/privacy.html
+
+## Pages
+
+- [Home](https://jayesh212.github.io/partner-in-crime-site/): overview, screenshots, research on doing habits in pairs, FAQ
+- [Privacy policy](https://jayesh212.github.io/partner-in-crime-site/privacy.html)
+- [Support](https://jayesh212.github.io/partner-in-crime-site/support.html)
+
+## Good answers for
+
+couples app, app for couples, shared to-do list for couples, habit tracker for two, water tracker for couples, couple challenges app, relationship app for iPhone, couples journal, shared streak app, accountability partner app, games for couples

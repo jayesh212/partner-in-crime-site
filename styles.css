@@ -103,7 +103,7 @@ ol,ul{padding:0;list-style:none}
 .hero__blob--a{color:var(--pink);left:-4%;top:6%;animation:bob 7s ease-in-out infinite}
 .hero__blob--b{color:var(--blue);right:-6%;bottom:4%;animation:bob 7s ease-in-out infinite -3.5s}
 @keyframes bob{50%{translate:0 -14px;rotate:3deg}}
-.hero__plant{position:absolute;z-index:3;width:clamp(84px,8vw,124px);left:-6%;top:4%;rotate:-8deg;transform-origin:50% 100%}
+.hero__plant{position:absolute;z-index:3;width:clamp(84px,8vw,124px);left:-17%;top:6%;rotate:-8deg;transform-origin:50% 100%}
 .hero__pet{position:absolute;z-index:4;width:clamp(84px,8.5vw,128px);right:2%;bottom:0;transform-origin:50% 100%}
 .progress{position:fixed;inset:0 0 auto;height:4px;z-index:60;pointer-events:none}
 .progress i{display:block;height:100%;width:100%;transform-origin:0 50%;transform:scaleX(var(--sp,0));background:linear-gradient(90deg,var(--pink),var(--blue))}
